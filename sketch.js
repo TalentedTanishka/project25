@@ -4,7 +4,7 @@ const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 
-var paper , ground , dustbin1, dustbin2 , dustbin3;
+var paper , ground , invisibleground ,  dustbin1, dustbin2 , dustbin3;
 var dustbinimg;
 
 function preload()
@@ -22,7 +22,7 @@ function setup() {
 	world = engine.world;
 
 	
-paper = new Paper(250,50,70,keyPressed());
+paper = new Paper(250,50,40,keyPressed());
 ground = new Ground(400,670,800,30);
 dustbin1 = new Dustbin(780,555,20,170);
 dustbin2 = new Dustbin(600,555,20,170);
@@ -54,7 +54,7 @@ function keyPressed()
 {
    if(keyCode == UP_ARROW)
   {
-Matter.Body.applyForce(paper.body,paper.position,{x:490 , y:-900});
+Matter.Body.applyForce(paper.body,paper.position,{x:300 , y:-240});
 
 
 
